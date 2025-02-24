@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "npm install --legacy-peer-deps && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "custom-build": "npm install --legacy-peer-deps && next build"
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.7.4",
@@ -33,8 +34,8 @@
     "next": "^15.1.7",
     "next-auth": "^4.24.11",
     "nodemailer": "^6.10.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.5.0",
     "react-phone-input-2": "^2.15.1",
     "react-select-country-list": "^2.2.3",
