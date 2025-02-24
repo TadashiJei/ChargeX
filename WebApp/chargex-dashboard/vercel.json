@@ -1,18 +1,15 @@
 {
   "version": 2,
-  "scripts": {
-    "build": "npm install --legacy-peer-deps && next build"
-  },
   "builds": [
     {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build"
+        "distDir": "build",
+        "buildCommand": "npm install --legacy-peer-deps && npm run build"
       }
     }
   ],
-  
   "routes": [
     {
       "src": "/(.*)",
