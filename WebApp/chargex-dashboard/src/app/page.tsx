@@ -323,6 +323,182 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Web3 Integration Section */}
+        <section className="relative py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">Web3 Integration</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Smart Contract Flow */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative"
+              >
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-8">
+                    <h3 className="text-2xl font-bold text-[#f78a1d] mb-6">Smart Contract Flow</h3>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">1. Battery Registration</h4>
+                        <p className="text-gray-400">Each battery is registered as a unique NFT with its specifications, warranty, and maintenance history on the blockchain.</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">2. Leasing Contract</h4>
+                        <p className="text-gray-400">Users initiate a leasing contract by depositing collateral and agreeing to pay-per-use terms through smart contracts.</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">3. Usage Tracking</h4>
+                        <p className="text-gray-400">Smart contracts automatically track usage metrics and calculate payments based on actual consumption.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Blockchain Features */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative"
+              >
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-8">
+                    <h3 className="text-2xl font-bold text-[#f78a1d] mb-6">Blockchain Features</h3>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">NFT-Based Ownership</h4>
+                        <p className="text-gray-400">Batteries are tokenized as NFTs, enabling transparent ownership tracking and seamless transfers.</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Smart Payment System</h4>
+                        <p className="text-gray-400">Automated micropayments using stablecoins or native tokens based on actual battery usage.</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Decentralized Governance</h4>
+                        <p className="text-gray-400">Community-driven decisions on platform upgrades and fee structures through DAO mechanisms.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Process Flow */}
+            <div className="mt-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative"
+              >
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-8">
+                    <h3 className="text-2xl font-bold text-[#f78a1d] mb-6">How It Works</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                      <div className="relative">
+                        <div className="text-[#f78a1d] text-4xl font-bold mb-4">01</div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Connect Wallet</h4>
+                        <p className="text-gray-400">Connect your Web3 wallet (MetaMask, etc.) to access the platform.</p>
+                      </div>
+                      <div className="relative">
+                        <div className="text-[#f78a1d] text-4xl font-bold mb-4">02</div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Choose Battery</h4>
+                        <p className="text-gray-400">Browse available batteries and select one that meets your needs.</p>
+                      </div>
+                      <div className="relative">
+                        <div className="text-[#f78a1d] text-4xl font-bold mb-4">03</div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Sign Contract</h4>
+                        <p className="text-gray-400">Review and sign the smart contract for battery leasing.</p>
+                      </div>
+                      <div className="relative">
+                        <div className="text-[#f78a1d] text-4xl font-bold mb-4">04</div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Start Using</h4>
+                        <p className="text-gray-400">Begin using the battery with automatic usage tracking and payments.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Technical Details */}
+            <div className="mt-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="relative"
+              >
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-8">
+                    <h3 className="text-2xl font-bold text-[#f78a1d] mb-6">Technical Stack</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Smart Contracts</h4>
+                        <ul className="text-gray-400 space-y-2">
+                          <li>• ERC-721 for battery NFTs</li>
+                          <li>• ERC-20 for payment tokens</li>
+                          <li>• Custom leasing contracts</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Web3 Integration</h4>
+                        <ul className="text-gray-400 space-y-2">
+                          <li>• ethers.js for blockchain interaction</li>
+                          <li>• IPFS for data storage</li>
+                          <li>• Web3Modal for wallet connection</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Security</h4>
+                        <ul className="text-gray-400 space-y-2">
+                          <li>• Multi-signature wallets</li>
+                          <li>• Time-locked contracts</li>
+                          <li>• Audited smart contracts</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* IoT Integration Section */}
         <section className="relative py-20 bg-gradient-to-b from-transparent to-black/20">
           <div className="container mx-auto px-4">
