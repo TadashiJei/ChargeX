@@ -631,6 +631,147 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Team Section */}
+        <div className="relative py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-4">Meet Our Team</h2>
+              <p className="text-xl text-gray-400">
+                The visionaries behind ChargeX's revolutionary technology
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Founder & CEO */}
+              <div className="relative group">
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/40 backdrop-blur-sm rounded-xl p-6 text-center">
+                    <div className="relative w-32 h-32 mx-auto mb-6">
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#f78a1d] to-[#f78a1d]/50 animate-pulse blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                      <Image
+                        src="/team/jay.jpg"
+                        alt="Jay - Founder & CEO"
+                        width={128}
+                        height={128}
+                        className="rounded-full relative z-10 object-cover w-full h-full border-2 border-[#f78a1d30]"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Jay</h3>
+                    <p className="text-[#f78a1d] font-semibold mb-4">Founder & CEO</p>
+                    <p className="text-gray-400 mb-6">
+                      Visionary leader with expertise in blockchain and energy systems.
+                    </p>
+                    <div className="flex justify-center space-x-4">
+                      <Link href="https://linkedin.com/in/jay" className="text-gray-400 hover:text-[#f78a1d] transition">
+                        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                      </Link>
+                      <Link href="https://twitter.com/jay" className="text-gray-400 hover:text-[#f78a1d] transition">
+                        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              </motion.div>
+
+              {/* CTO */}
+              <div className="relative group">
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/40 backdrop-blur-sm rounded-xl p-6 text-center">
+                    <div className="relative w-32 h-32 mx-auto mb-6">
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#f78a1d] to-[#f78a1d]/50 animate-pulse blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                      <Image
+                        src="/team/alex.jpg"
+                        alt="Alex - CTO"
+                        width={128}
+                        height={128}
+                        className="rounded-full relative z-10 object-cover w-full h-full border-2 border-[#f78a1d30]"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Alex</h3>
+                    <p className="text-[#f78a1d] font-semibold mb-4">CTO</p>
+                    <p className="text-gray-400 mb-6">
+                      Technical innovator specializing in IoT and smart energy systems.
+                    </p>
+                    <div className="flex justify-center space-x-4">
+                      <Link href="https://linkedin.com/in/alex" className="text-gray-400 hover:text-[#f78a1d] transition">
+                        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                    </Link>
+                    <Link href="https://github.com/alex" className="text-gray-400 hover:text-[#f78a1d] transition">
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd"/>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+              </motion.div>
+
+              {/* COO */}
+              <div className="relative group">
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/40 backdrop-blur-sm rounded-xl p-6 text-center">
+                    <div className="relative w-32 h-32 mx-auto mb-6">
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#f78a1d] to-[#f78a1d]/50 animate-pulse blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                      <Image
+                        src="/team/sarah.jpg"
+                        alt="Sarah - COO"
+                        width={128}
+                        height={128}
+                        className="rounded-full relative z-10 object-cover w-full h-full border-2 border-[#f78a1d30]"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Sarah</h3>
+                    <p className="text-[#f78a1d] font-semibold mb-4">COO</p>
+                    <p className="text-gray-400 mb-6">
+                      Operations expert with deep experience in sustainable energy.
+                    </p>
+                    <div className="flex justify-center space-x-4">
+                      <Link href="https://linkedin.com/in/sarah" className="text-gray-400 hover:text-[#f78a1d] transition">
+                        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                    </Link>
+                    <Link href="https://twitter.com/sarah" className="text-gray-400 hover:text-[#f78a1d] transition">
+                      <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
         {/* Footer */}
         <footer className="relative z-10 border-t border-[#f78a1d30] bg-black/20 backdrop-blur-sm">
           <Squares 
