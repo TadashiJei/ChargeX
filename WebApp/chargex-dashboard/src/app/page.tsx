@@ -169,7 +169,7 @@ export default function Home() {
                   <Link href="/dashboard" className="block">
                     <GradientButton>Launch App</GradientButton>
                   </Link>
-                  <Link href="#features" className="block">
+                  <Link href="learn" className="block">
                     <GradientButton variant="outline">Learn More</GradientButton>
                   </Link>
                 </motion.div>
@@ -642,41 +642,46 @@ export default function Home() {
             className="absolute inset-0"
           />
           <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="space-y-4">
-                <Image
-                  src="/logo-light.svg"
-                  alt="ChargeX Logo"
-                  width={120}
-                  height={36}
-                  className="h-auto w-auto"
-                />
-                <p className="text-gray-400 text-sm">
-                  Revolutionizing energy distribution through decentralized solutions.
-                </p>
-              </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               <div>
-                <h3 className="text-white font-semibold mb-4">Product</h3>
-                <ul className="space-y-2">
-                  <li><Link href="/features" className="text-gray-400 hover:text-[#f78a1d] transition">Features</Link></li>
-                  <li><Link href="/pricing" className="text-gray-400 hover:text-[#f78a1d] transition">Pricing</Link></li>
-                  <li><Link href="/api" className="text-gray-400 hover:text-[#f78a1d] transition">API</Link></li>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Product</h3>
+                <ul className="mt-4 space-y-4">
+                  <li>
+                    <Link href="/features" className="text-base text-gray-400 hover:text-white">
+                      Features
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/pricing" className="text-base text-gray-400 hover:text-white">
+                      Pricing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/learn" className="text-base text-gray-400 hover:text-white">
+                      Learn More
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/api" className="text-base text-gray-400 hover:text-white">
+                      API
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-4">Company</h3>
-                <ul className="space-y-2">
-                  <li><Link href="/about" className="text-gray-400 hover:text-[#f78a1d] transition">About</Link></li>
-                  <li><Link href="/blog" className="text-gray-400 hover:text-[#f78a1d] transition">Blog</Link></li>
-                  <li><Link href="/careers" className="text-gray-400 hover:text-[#f78a1d] transition">Careers</Link></li>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Company</h3>
+                <ul className="mt-4 space-y-4">
+                  <li><Link href="/about" className="text-base text-gray-400 hover:text-white">About</Link></li>
+                  <li><Link href="/blog" className="text-base text-gray-400 hover:text-white">Blog</Link></li>
+                  <li><Link href="/careers" className="text-base text-gray-400 hover:text-white">Careers</Link></li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-4">Legal</h3>
-                <ul className="space-y-2">
-                  <li><Link href="/privacy" className="text-gray-400 hover:text-[#f78a1d] transition">Privacy</Link></li>
-                  <li><Link href="/terms" className="text-gray-400 hover:text-[#f78a1d] transition">Terms</Link></li>
-                  <li><Link href="/security" className="text-gray-400 hover:text-[#f78a1d] transition">Security</Link></li>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Legal</h3>
+                <ul className="mt-4 space-y-4">
+                  <li><Link href="/privacy" className="text-base text-gray-400 hover:text-white">Privacy</Link></li>
+                  <li><Link href="/terms" className="text-base text-gray-400 hover:text-white">Terms</Link></li>
+                  <li><Link href="/security" className="text-base text-gray-400 hover:text-white">Security</Link></li>
                 </ul>
               </div>
             </div>
