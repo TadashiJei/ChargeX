@@ -200,8 +200,8 @@ export default function Home() {
                       inactiveZone={0.01}
                       borderWidth={3}
                     />
-                    <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] border-white/10 bg-black/20 backdrop-blur-lg p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
-                      <div className="relative flex flex-1 flex-col justify-between gap-3">
+                    <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+                      <div className="relative flex h-full flex-col justify-between gap-3">
                         <div className="w-fit rounded-lg border-[0.75px] border-white/10 bg-[#f78a1d]/10 p-3">
                           <Icon size={24} className="text-[#f78a1d]" />
                         </div>
@@ -221,6 +221,296 @@ export default function Home() {
             })}
           </div>
         </div>
+
+        {/* Core Technology Section */}
+        <section className="relative py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">Core Technologies</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* OCY Technology */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative"
+              >
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-6 h-full">
+                    <h3 className="text-2xl font-bold text-[#f78a1d] mb-4">OCY Technology</h3>
+                    <p className="text-gray-300 mb-4">
+                      Our proprietary Optimized Charging Yield (OCY) technology maximizes battery efficiency 
+                      through smart charging algorithms and real-time monitoring.
+                    </p>
+                    <ul className="text-gray-400 space-y-2">
+                      <li>• Smart charge scheduling</li>
+                      <li>• Dynamic power distribution</li>
+                      <li>• Efficiency optimization</li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* ADCS System */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative"
+              >
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-6 h-full">
+                    <h3 className="text-2xl font-bold text-[#f78a1d] mb-4">ADCS System</h3>
+                    <p className="text-gray-300 mb-4">
+                      Advanced Decentralized Control System (ADCS) enables autonomous operation and 
+                      seamless integration with blockchain technology.
+                    </p>
+                    <ul className="text-gray-400 space-y-2">
+                      <li>• Decentralized control</li>
+                      <li>• Smart contract integration</li>
+                      <li>• Automated transactions</li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* AI Agents */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative"
+              >
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-6 h-full">
+                    <h3 className="text-2xl font-bold text-[#f78a1d] mb-4">AI Agents</h3>
+                    <p className="text-gray-300 mb-4">
+                      Powered by Rivalz.ai, our AI agents provide predictive maintenance, optimization, 
+                      and intelligent decision-making capabilities.
+                    </p>
+                    <ul className="text-gray-400 space-y-2">
+                      <li>• Predictive maintenance</li>
+                      <li>• Performance optimization</li>
+                      <li>• Usage pattern analysis</li>
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* IoT Integration Section */}
+        <section className="relative py-20 bg-gradient-to-b from-transparent to-black/20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">IoT Integration</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative"
+              >
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-8">
+                    <h3 className="text-2xl font-bold text-[#f78a1d] mb-6">Hardware Components</h3>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">ESP32 Module</h4>
+                        <p className="text-gray-400">Real-time monitoring of battery parameters including voltage, current, and temperature</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Raspberry Pi</h4>
+                        <p className="text-gray-400">Central control unit managing charging processes and data processing</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Battery Management</h4>
+                        <p className="text-gray-400">Advanced BMS system with NFT-based warranty tracking and health monitoring</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative"
+              >
+                <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-8">
+                    <h3 className="text-2xl font-bold text-[#f78a1d] mb-6">Smart Features</h3>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Real-time Monitoring</h4>
+                        <p className="text-gray-400">Continuous tracking of battery health, usage patterns, and charging cycles</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Predictive Maintenance</h4>
+                        <p className="text-gray-400">AI-powered predictions for maintenance needs and performance optimization</p>
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">Blockchain Integration</h4>
+                        <p className="text-gray-400">Secure and transparent tracking of battery ownership and transactions</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Partners Section */}
+        <section className="relative py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center text-white mb-16">Technology Partners</h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="relative rounded-[1.25rem] border-[0.75px] border-[#f78a1d30] p-2 md:rounded-[1.5rem] md:p-3">
+                <GlowingEffect
+                  spread={40}
+                  glow={true}
+                  disabled={false}
+                  proximity={64}
+                  inactiveZone={0.01}
+                  borderWidth={3}
+                />
+                <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-8">
+                  <div className="flex items-center justify-between flex-wrap gap-8">
+                    <div className="relative w-48 h-16">
+                      <Image
+                        src="/partners/rivalz.png"
+                        alt="Rivalz.ai"
+                        fill
+                        className="object-contain"
+                        sizes="192px"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-[#f78a1d] mb-2">Rivalz.ai</h3>
+                      <p className="text-gray-400">
+                        Powering our AI-driven predictive maintenance and analytics system for optimal battery performance and longevity.
+                      </p>
+                    </div>
+                    <a
+                      href="https://rivalz.ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#f78a1d] hover:text-[#f78a1d80] transition flex items-center gap-2"
+                    >
+                      Learn More
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="relative z-10 border-t border-[#f78a1d30] bg-black/20 backdrop-blur-sm">
+          <Squares 
+            direction="diagonal"
+            speed={0.2}
+            squareSize={20}
+            borderColor="rgba(247, 138, 29, 0.1)"
+            hoverFillColor="rgba(247, 138, 29, 0.05)"
+            className="absolute inset-0"
+          />
+          <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="space-y-4">
+                <Image
+                  src="/logo-light.svg"
+                  alt="ChargeX Logo"
+                  width={120}
+                  height={36}
+                  className="h-auto w-auto"
+                />
+                <p className="text-gray-400 text-sm">
+                  Revolutionizing energy distribution through decentralized solutions.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-white font-semibold mb-4">Product</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/features" className="text-gray-400 hover:text-[#f78a1d] transition">Features</Link></li>
+                  <li><Link href="/pricing" className="text-gray-400 hover:text-[#f78a1d] transition">Pricing</Link></li>
+                  <li><Link href="/api" className="text-gray-400 hover:text-[#f78a1d] transition">API</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-white font-semibold mb-4">Company</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/about" className="text-gray-400 hover:text-[#f78a1d] transition">About</Link></li>
+                  <li><Link href="/blog" className="text-gray-400 hover:text-[#f78a1d] transition">Blog</Link></li>
+                  <li><Link href="/careers" className="text-gray-400 hover:text-[#f78a1d] transition">Careers</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-white font-semibold mb-4">Legal</h3>
+                <ul className="space-y-2">
+                  <li><Link href="/privacy" className="text-gray-400 hover:text-[#f78a1d] transition">Privacy</Link></li>
+                  <li><Link href="/terms" className="text-gray-400 hover:text-[#f78a1d] transition">Terms</Link></li>
+                  <li><Link href="/security" className="text-gray-400 hover:text-[#f78a1d] transition">Security</Link></li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8 pt-8 border-t border-[#f78a1d30]">
+              <p className="text-center text-gray-400 text-sm">
+                {new Date().getFullYear()} ChargeX. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
