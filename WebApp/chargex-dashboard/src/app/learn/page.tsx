@@ -181,36 +181,68 @@ const sections = [
 
 export default function LearnMore() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-gradient-to-b from-black via-black/95 to-[#f78a1d]/5">
       <div className="relative">
-        <Squares />
+        <div className="fixed inset-0">
+          <Squares 
+            direction="diagonal"
+            speed={0.3}
+            squareSize={30}
+            borderColor="rgba(247, 138, 29, 0.1)"
+            hoverFillColor="rgba(247, 138, 29, 0.05)"
+          />
+        </div>
         <div className="relative z-10 container mx-auto px-4 py-20">
           <BackButton />
           
           {/* Header */}
           <div className="text-center mb-20">
-            <h1 className="text-5xl font-bold text-white mb-6">Learn More About ChargeX</h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <motion.h1 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-5xl font-bold text-white mb-6"
+            >
+              Learn More About ChargeX
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-xl text-gray-400 max-w-3xl mx-auto"
+            >
               Discover how our innovative technology is revolutionizing battery management through
               decentralized control, AI optimization, and blockchain integration.
-            </p>
+            </motion.p>
           </div>
 
           {/* Navigation */}
-          <div className="mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mb-16"
+          >
             <div className="flex flex-wrap justify-center gap-4">
-              {sections.map((section) => (
-                <Link
+              {sections.map((section, index) => (
+                <motion.div
                   key={section.id}
-                  href={`#${section.id}`}
-                  className="px-6 py-3 rounded-full border border-[#f78a1d30] bg-black/20 backdrop-blur-sm
-                    text-[#f78a1d] hover:bg-[#f78a1d20] transition duration-300"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
                 >
-                  {section.title}
-                </Link>
+                  <Link
+                    href={`#${section.id}`}
+                    className="px-6 py-3 rounded-full border border-[#f78a1d30] bg-black/40 backdrop-blur-sm
+                      text-[#f78a1d] hover:bg-[#f78a1d20] transition duration-300 flex items-center gap-2"
+                  >
+                    <section.icon className="w-4 h-4" />
+                    {section.title}
+                  </Link>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Sections */}
           <div className="space-y-32">
@@ -232,9 +264,9 @@ export default function LearnMore() {
                     inactiveZone={0.01}
                     borderWidth={3}
                   />
-                  <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-8">
+                  <div className="relative z-10 bg-black/40 backdrop-blur-sm rounded-xl p-8">
                     <div className="flex items-center gap-4 mb-8">
-                      <div className="w-12 h-12 rounded-full bg-[#f78a1d20] flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-[#f78a1d20] flex items-center justify-center border border-[#f78a1d30]">
                         <section.icon className="w-6 h-6 text-[#f78a1d]" />
                       </div>
                       <div>
@@ -281,7 +313,7 @@ export default function LearnMore() {
                 inactiveZone={0.01}
                 borderWidth={3}
               />
-              <div className="relative z-10 bg-black/20 backdrop-blur-sm rounded-xl p-12">
+              <div className="relative z-10 bg-black/40 backdrop-blur-sm rounded-xl p-12">
                 <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
                 <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
                   Join the future of decentralized battery management. Start using ChargeX today
