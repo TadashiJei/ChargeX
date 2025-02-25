@@ -4,10 +4,10 @@
 
 ### Authentication & Security
 - [ ] Implement Web3 wallet authentication (MetaMask integration)
-- [ ] Add JWT token management
-- [ ] Implement role-based access control (Admin, User)
-- [ ] Add MFA support
-- [ ] Set up secure API endpoints
+- [x] Add JWT token management
+- [x] Implement role-based access control (Admin, User)
+- [x] Add MFA support
+- [x] Set up secure API endpoints
 
 ### Smart Contract Integration
 - [ ] Deploy battery leasing smart contracts

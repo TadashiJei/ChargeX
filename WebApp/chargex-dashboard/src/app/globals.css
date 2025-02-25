@@ -202,6 +202,12 @@
     --border-color-1: hsla(33, 93%, 90%, 0.2);
     --border-color-2: hsla(33, 93%, 60%, 0.75);
   }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
 }
 
 :root {

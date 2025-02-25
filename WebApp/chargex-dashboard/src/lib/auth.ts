@@ -43,29 +43,61 @@ export const generateVerificationToken = (): string => {
 };
 
 const transporter = nodemailer.createTransport({
-  host: SMTP_HOST,
-  port: Number(SMTP_PORT),
-  secure: true,
+  host: process.env.SMTP_HOST,
+  port: 465, // Using secure port 465 for SSL
+  secure: true, // Use SSL
   auth: {
-    user: SMTP_USER,
-    pass: SMTP_PASS,
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+  tls: {
+    // Do not fail on invalid certs
+    rejectUnauthorized: false,
   },
 });
 
-export const sendVerificationEmail = async (
+export async function sendVerificationEmail(
   email: string,
   firstName: string,
   token: string
-): Promise<void> => {
+) {
   const verificationUrl = `${process.env.NEXT_PUBLIC_APP_URL}/verify-email?token=${token}`;
 
-  await transporter.sendMail({
-    from: EMAIL_FROM,
+  const mailOptions = {
+    from: `"ChargeX" <${process.env.SMTP_USER}>`,
     to: email,
-    subject: 'Welcome to ChargeX - Verify Your Email',
-    html: getRegistrationEmailTemplate(firstName, verificationUrl),
-  });
-};
+    subject: "Verify your email address",
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #333;">Welcome to ChargeX!</h2>
+        <p>Hi ${firstName},</p>
+        <p>Thank you for registering with ChargeX. Please verify your email address by clicking the button below:</p>
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="${verificationUrl}" 
+             style="background-color: #f97316; color: white; padding: 12px 30px; 
+                    text-decoration: none; border-radius: 5px; display: inline-block;">
+            Verify Email Address
+          </a>
+        </div>
+        <p>Or copy and paste this link in your browser:</p>
+        <p style="color: #666;">${verificationUrl}</p>
+        <p>This link will expire in 24 hours.</p>
+        <p>If you didn't create an account with ChargeX, please ignore this email.</p>
+        <hr style="border: 1px solid #eee; margin: 30px 0;">
+        <p style="color: #666; font-size: 12px;">
+          This is an automated email, please do not reply.
+        </p>
+      </div>
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+  } catch (error) {
+    console.error('Error sending verification email:', error);
+    throw error;
+  }
+}
 
 export const sendOTPEmail = async (
   email: string,
@@ -91,7 +123,7 @@ export const sendOTPEmail = async (
           <p style="color: #666; font-size: 14px;">If you didn't request this code, please secure your account immediately.</p>
         </div>
         <div style="text-align: center; margin-top: 20px; color: #666; font-size: 12px;">
-          <p>© ${new Date().getFullYear()} ChargeX. All rights reserved.</p>
+          <p> ${new Date().getFullYear()} ChargeX. All rights reserved.</p>
         </div>
       </div>
     `,

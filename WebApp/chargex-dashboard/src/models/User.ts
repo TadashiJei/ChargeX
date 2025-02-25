@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import bcrypt from 'bcryptjs';
+import bcryptjs from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
   firstName: {
@@ -46,16 +46,17 @@ const userSchema = new mongoose.Schema({
     enum: ['user', 'admin'],
     default: 'user',
   },
-  isEmailVerified: {
+  isVerified: {
     type: Boolean,
-    default: false,
+    default: true, 
   },
+  verificationToken: String,
+  verificationExpires: Date,
   isMFAEnabled: {
     type: Boolean,
     default: false,
   },
   mfaSecret: String,
-  verificationToken: String,
   verificationTokenExpiry: Date,
   resetPasswordToken: String,
   resetPasswordTokenExpiry: Date,
@@ -72,8 +73,8 @@ userSchema.pre('save', async function(next) {
   if (!this.isModified('password')) return next();
   
   try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
+    const salt = await bcryptjs.genSalt(10);
+    this.password = await bcryptjs.hash(this.password, salt);
     next();
   } catch (error) {
     next(error as Error);
@@ -83,7 +84,7 @@ userSchema.pre('save', async function(next) {
 // Compare password method
 userSchema.methods.comparePassword = async function(candidatePassword: string): Promise<boolean> {
   try {
-    return await bcrypt.compare(candidatePassword, this.password);
+    return await bcryptjs.compare(candidatePassword, this.password);
   } catch (error) {
     throw error;
   }

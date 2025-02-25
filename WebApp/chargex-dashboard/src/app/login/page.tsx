@@ -1,40 +1,63 @@
-"use client";
+'use client';
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
     setIsLoading(true);
-    setError("");
 
     try {
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
+      console.log('Login response:', data);
 
-      if (!response.ok) {
-        throw new Error(data.message || "Login failed");
+      if (response.ok) {
+        // Store token and user data
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        
+        // Redirect to dashboard
+        router.push('/dashboard');
+      } else {
+        switch (response.status) {
+          case 401:
+            setError('Invalid email or password');
+            break;
+          case 403:
+            if (data.status === 'unverified') {
+              setError('Your email is not verified');
+            } else {
+              setError(data.error || 'Access denied');
+            }
+            break;
+          default:
+            setError(data.error || 'Login failed');
+        }
       }
-
-      // Handle successful login
-      window.location.href = "/dashboard";
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
+    } catch (error) {
+      console.error('Login error:', error);
+      setError('An error occurred during login');
     } finally {
       setIsLoading(false);
     }
@@ -114,6 +137,15 @@ export default function LoginPage() {
                 className="text-red-500 text-sm"
               >
                 {error}
+                {error.includes('not verified') && (
+                  <button
+                    type="button"
+                    onClick={() => router.push(`/request-verification?email=${encodeURIComponent(email)}`)}
+                    className="block mt-2 text-[#f78a1d] hover:text-[#f78a1d]/80"
+                  >
+                    Resend verification email
+                  </button>
+                )}
               </motion.div>
             )}
 
