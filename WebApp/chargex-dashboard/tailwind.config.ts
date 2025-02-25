@@ -29,9 +29,15 @@ export default {
           from: { backgroundPosition: "50% 50%, 50% 50%" },
           to: { backgroundPosition: "350% 50%, 350% 50%" },
         },
+        glow: {
+          '0%': { opacity: '0.8' },
+          '50%': { opacity: '1' },
+          '100%': { opacity: '0.8' },
+        }
       },
       animation: {
         aurora: "aurora 60s linear infinite",
+        glow: 'glow 2s ease-in-out infinite',
       },
     },
   },

@@ -12,6 +12,9 @@ import {
 } from 'lucide-react';
 import { useAuth } from '@/contexts/auth-context';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
+import { BatteryUsageChart } from '@/components/dashboard/battery-usage-chart';
+import { EnergyTradingChart } from '@/components/dashboard/energy-trading-chart';
+import { ActivityFeed } from '@/components/dashboard/activity-feed';
 
 const stats = [
   {
@@ -49,11 +52,26 @@ export default function DashboardPage() {
 
   return (
     <DashboardLayout>
-      <div className="space-y-6">
+      <div className="space-y-6 p-6 relative">
+        <GlowingEffect
+          blur={20}
+          disabled={false}
+          glow
+          className="absolute inset-0"
+          variant="white"
+          spread={80}
+        />
         {/* Welcome Section */}
         <div>
-          <h1 className="text-2xl font-bold text-white">
-            Welcome back, {user ? user.firstName : 'User'}!
+          <h1 className="text-2xl font-bold text-white flex items-center space-x-2">
+            {user ? (
+              <>Welcome back, {user.firstName}!</>
+            ) : (
+              <>
+                <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
+                <span>Loading your dashboard...</span>
+              </>
+            )}
           </h1>
           <p className="text-gray-400">Here's what's happening with your batteries today.</p>
         </div>
@@ -104,65 +122,32 @@ export default function DashboardPage() {
           })}
         </div>
 
-        {/* Charts Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {/* Battery Usage Chart */}
-          <div className="relative rounded-xl">
-            <GlowingEffect
-              spread={40}
-              glow={true}
-              disabled={false}
-              proximity={64}
-              inactiveZone={0.01}
-              borderWidth={3}
-            />
-            <div className="bg-gray-800/40 backdrop-blur-sm rounded-xl p-6 relative z-10">
-              <h3 className="text-lg font-semibold text-white mb-4">Battery Usage</h3>
-              <div className="h-64 flex items-center justify-center text-gray-400">
-                Chart Component Coming Soon
-              </div>
-            </div>
-          </div>
-
-          {/* Energy Trading Chart */}
-          <div className="relative rounded-xl">
-            <GlowingEffect
-              spread={40}
-              glow={true}
-              disabled={false}
-              proximity={64}
-              inactiveZone={0.01}
-              borderWidth={3}
-            />
-            <div className="bg-gray-800/40 backdrop-blur-sm rounded-xl p-6 relative z-10">
-              <h3 className="text-lg font-semibold text-white mb-4">Energy Trading</h3>
-              <div className="h-64 flex items-center justify-center text-gray-400">
-                Chart Component Coming Soon
-              </div>
-            </div>
-          </div>
+        {/* Charts Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <BatteryUsageChart />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <EnergyTradingChart />
+          </motion.div>
         </div>
 
-        {/* Recent Activity */}
-        <div className="relative rounded-xl">
-          <GlowingEffect
-            spread={40}
-            glow={true}
-            disabled={false}
-            proximity={64}
-            inactiveZone={0.01}
-            borderWidth={3}
-          />
-          <div className="bg-gray-800/40 backdrop-blur-sm rounded-xl p-6 relative z-10">
-            <h3 className="text-lg font-semibold text-white mb-4">Recent Activity</h3>
-            <div className="space-y-4">
-              {/* Activity items will go here */}
-              <div className="text-gray-400 text-center py-8">
-                Activity Feed Coming Soon
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Activity Feed */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <ActivityFeed />
+        </motion.div>
       </div>
     </DashboardLayout>
   );

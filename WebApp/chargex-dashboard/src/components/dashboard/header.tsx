@@ -1,11 +1,14 @@
 'use client';
 
-import { BellIcon, UserCircleIcon } from 'lucide-react';
+import { UserCircleIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAuth } from '@/contexts/auth-context';
+import { NotificationPopover } from '@/components/ui/notification-popover';
+import { useNotifications } from '@/contexts/notification-context';
 
 export function Header() {
   const { user } = useAuth();
+  const { notifications, markAsRead, markAllAsRead } = useNotifications();
 
   return (
     <header className="bg-gray-900 border-b border-gray-800">
@@ -14,14 +17,17 @@ export function Header() {
 
         <div className="flex items-center space-x-4">
           {/* Notifications */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-800 relative"
-          >
-            <BellIcon size={20} />
-            <span className="absolute top-1 right-1 w-2 h-2 bg-orange-500 rounded-full" />
-          </motion.button>
+          <NotificationPopover
+            notifications={notifications}
+            onNotificationsChange={(updatedNotifications) => {
+              updatedNotifications.forEach(notification => {
+                if (!notification.read) {
+                  markAsRead(notification.id);
+                }
+              });
+            }}
+            buttonClassName="w-10 h-10 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white"
+          />
 
           {/* Profile */}
           <motion.button
@@ -30,9 +36,16 @@ export function Header() {
             className="flex items-center space-x-3 p-2 text-gray-400 hover:text-white rounded-lg hover:bg-gray-800"
           >
             <UserCircleIcon size={20} />
-            <span className="hidden sm:inline">
-              {user ? `${user.firstName} ${user.lastName}` : 'Loading...'}
-            </span>
+            <div className="hidden sm:flex items-center space-x-2">
+              {user ? (
+                <span className="text-white">{user.firstName} {user.lastName}</span>
+              ) : (
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
+                  <span className="text-gray-400">Connecting...</span>
+                </div>
+              )}
+            </div>
           </motion.button>
         </div>
       </div>

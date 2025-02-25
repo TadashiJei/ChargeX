@@ -13,13 +13,19 @@ import {
   UsersIcon,
   LogOutIcon,
   MenuIcon,
-  XIcon
+  XIcon,
+  MapPinIcon,
+  BrainCircuitIcon,
+  HistoryIcon
 } from 'lucide-react';
 
 const menuItems = [
   { name: 'Dashboard', icon: HomeIcon, path: '/dashboard' },
   { name: 'Battery Lease', icon: BatteryChargingIcon, path: '/dashboard/lease' },
+  { name: 'Battery Tracking', icon: MapPinIcon, path: '/dashboard/tracking' },
   { name: 'Energy Trading', icon: LineChartIcon, path: '/dashboard/trading' },
+  { name: 'Predictive Analytics', icon: BrainCircuitIcon, path: '/dashboard/analytics' },
+  { name: 'Transactions', icon: HistoryIcon, path: '/dashboard/transactions' },
   { name: 'Settings', icon: SettingsIcon, path: '/dashboard/settings' },
   { name: 'Admin', icon: UsersIcon, path: '/dashboard/admin', adminOnly: true },
 ];
