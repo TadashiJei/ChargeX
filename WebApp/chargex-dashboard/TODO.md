@@ -14,7 +14,7 @@
 - [ ] Implement P2P energy trading contracts
 - [x] Set up Web3.js/ethers.js connections
 - [x] Add transaction signing and verification
-- [ ] Implement gas fee estimation
+- [x] Implement gas fee estimation
 
 ### Core Features
 - [x] Battery Leasing System
