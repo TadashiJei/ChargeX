@@ -5,6 +5,8 @@ import { NavigationMenu } from "@radix-ui/react-navigation-menu";
 import { Battery, Bolt, ChartLine, Home, Settings, Users } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { WebSocketStatus } from "@/components/WebSocketStatus";
+import { Web3Auth } from "@/components/Web3Auth";
 
 const navigationItems = [
   { name: "Home", href: "/", icon: Home },
@@ -26,11 +28,11 @@ export default function DashboardLayout({
     <AuroraBackground className="flex h-screen">
       <div className="flex w-full">
         {/* Sidebar */}
-        <div className="w-64 bg-black/10 backdrop-blur-xl p-4">
+        <div className="w-64 bg-black/10 backdrop-blur-xl p-4 flex flex-col">
           <div className="flex items-center gap-2 mb-8">
             <div className="text-2xl font-bold text-[#f78a1d]">ChargeX</div>
           </div>
-          <NavigationMenu className="space-y-2">
+          <NavigationMenu className="space-y-2 flex-1">
             {navigationItems.map((item) => {
               const Icon = item.icon;
               const isActive = pathname === item.href;
@@ -50,6 +52,10 @@ export default function DashboardLayout({
               );
             })}
           </NavigationMenu>
+          <div className="mt-auto pt-4 space-y-4">
+            <Web3Auth />
+            <WebSocketStatus />
+          </div>
         </div>
 
         {/* Main Content */}

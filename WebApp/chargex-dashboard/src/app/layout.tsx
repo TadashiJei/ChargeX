@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from '@/contexts/auth-context';
 import { NotificationProvider } from '@/contexts/notification-context';
+import { Web3Provider } from '@/context/Web3Context';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +22,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <AuthProvider>
           <NotificationProvider>
-            {children}
+            <Web3Provider>
+              {children}
+            </Web3Provider>
           </NotificationProvider>
         </AuthProvider>
       </body>

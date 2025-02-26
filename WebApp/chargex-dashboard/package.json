@@ -7,7 +7,10 @@
     "build": "npm install --legacy-peer-deps && next build",
     "start": "next start",
     "lint": "next lint",
-    "custom-build": "npm install --legacy-peer-deps && next build"
+    "custom-build": "npm install --legacy-peer-deps && next build",
+    "websocket": "node start-websocket-server.js",
+    "mock-data": "node scripts/generate-mock-data.js",
+    "dev:ws": "node start-dev-environment.js"
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.7.4",
@@ -22,6 +25,7 @@
     "@tremor/react": "^3.18.7",
     "@types/bcryptjs": "^2.4.6",
     "@types/recharts": "^1.8.29",
+    "@types/ws": "^8.5.14",
     "@web3-react/core": "^8.2.3",
     "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",
@@ -50,6 +54,7 @@
     "tailwind-merge": "^3.0.2",
     "ua-parser-js": "^2.0.2",
     "web3": "^4.16.0",
+    "ws": "^8.18.1",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {

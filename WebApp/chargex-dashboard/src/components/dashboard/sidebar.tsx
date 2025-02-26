@@ -21,9 +21,9 @@ import {
 
 const menuItems = [
   { name: 'Dashboard', icon: HomeIcon, path: '/dashboard' },
-  { name: 'Battery Lease', icon: BatteryChargingIcon, path: '/dashboard/lease' },
-  { name: 'Battery Tracking', icon: MapPinIcon, path: '/dashboard/tracking' },
-  { name: 'Energy Trading', icon: LineChartIcon, path: '/dashboard/trading' },
+  { name: 'Battery Leasing', icon: BatteryChargingIcon, path: '/dashboard/battery-leasing' },
+  { name: 'Battery Monitor', icon: MapPinIcon, path: '/dashboard/battery-monitor' },
+  { name: 'Energy Trading', icon: LineChartIcon, path: '/dashboard/energy-trading' },
   { name: 'Predictive Analytics', icon: BrainCircuitIcon, path: '/dashboard/analytics' },
   { name: 'Transactions', icon: HistoryIcon, path: '/dashboard/transactions' },
   { name: 'Settings', icon: SettingsIcon, path: '/dashboard/settings' },

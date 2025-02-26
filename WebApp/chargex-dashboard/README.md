@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ChargeX Dashboard
+
+A modern dashboard for managing battery leasing, energy trading, and real-time battery monitoring.
+
+## Features
+
+- **Battery Leasing**: Manage battery leases with blockchain-based smart contracts
+- **Energy Trading**: Facilitate peer-to-peer energy trading with blockchain integration
+- **Battery Monitoring**: Real-time telemetry and alerts for battery status
+- **WebSocket Integration**: Real-time updates for telemetry, alerts, and trading
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 16+ and npm
+- MongoDB (for data storage)
+- MetaMask or another Web3 wallet (for blockchain features)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/chargex-dashboard.git
+   cd chargex-dashboard
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env.local` file with the required environment variables (see `.env.example`).
+
+### Development
+
+Run the standard Next.js development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+
+For WebSocket features, run the WebSocket server in a separate terminal:
+
+```bash
+npm run websocket
+```
+
+For testing with mock data, run:
+
+```bash
+npm run mock-data
+```
+
+Or run both WebSocket server and mock data generator with one command:
+
+```bash
+npm run dev:ws
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Documentation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+For more detailed information, see:
+
+- [Blockchain Integration](./README-BLOCKCHAIN.md) - Smart contract setup and usage
+- [WebSocket Server](./README-WEBSOCKET.md) - Real-time updates and API
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Ethereum and Web3](https://ethereum.org/en/developers/docs/)
+- [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the LICENSE file for details.
